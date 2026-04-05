@@ -8,13 +8,12 @@ def call(Map config = [:]) {
     if (!repoUrl) {
         error "Git URL is required"
     }
-    retry(retries) {
+   
         git(
             url: repoUrl,
             branch: branch,
             credentialsId: credentialsId
         )
-    }
 
     echo "✅ Git checkout successful"
 }
